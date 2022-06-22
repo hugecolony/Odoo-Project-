@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<odoo>
+												<!-- Hostels !-->
+	<template id="hostel_base_menu">
+	    <t t-call="web.html_container">
+			<div class="page">
+	    <!-- <t t-call="web.external_layout">  -->
+	    	<table width="100%" style="border: none;">
+            	<tr style="padding-top:0px;padding-bottom:10px;cellpadding:10px;">
+            		<td width="100%">
+							<img t-if="request.env.company.logo" t-att-src="image_data_uri(request.env.company.logo)"  style="max-height: 100px;" alt="Logo"/>
+							<div style="font:24px Helvetica,sans-serif !important;">
+								<h1 style="text-align:right" width = "200%">
+									<strong>
+										Fast National University
+									</strong>
+
+								</h1>
+							</div>
+
+						<t t-call="hms_hostel.report_template_2_document_id" />
+					</td>
+				</tr>
+			</table>
+	    </div>
+		</t>
+	    <!-- </t>  -->
+	</template>
+
+    <!-- Translatable template -->
+	<template id="report_template_2_document_id">
+	    <t t-call="web.html_container">
+			<t foreach="docs" t-as ="doc">
+		<table width="100%" style="padding-top:0px;padding-bottom:10px;cellpadding:10px;">
+			       	<tr style="border: 2px solid black;">
+						<td width="100%">
+							<div  style="font:24px Helvetica,sans-serif !important;" >
+
+							<h1 style="text-align:right" width = "100%">
+									<strong>
+										Hostel Report
+									</strong>
+
+								</h1>
+							</div>
+						</td>
+			      	</tr>
+				</table>
+
+
+			<tr style="border-radius: 10px solid black; background-color: #F9C784">
+	 			<th width="10px" style="background-color:#3498DB !important;  color:#fff !important; "><strong>Hostel Name</strong> </th>
+		     	<th width="10px" style="background-color:#3498DB !important;  border-color: #fff; color:#fff !important; " ><strong>Hostel Address</strong> </th>
+				<th width="10px" style="background-color:#3498DB !important;  border-color: #fff; color:#fff !important; "><strong>Hostel Phone No</strong> </th>
+	 			<th width="10px" style="background-color:#3498DB !important;  border-color: #fff; color:#fff !important; "><strong>Maximum Capacity</strong> </th>
+				<th width="10px" style="background-color:#3498DB !important;  border-color: #fff; color:#fff !important; "><strong>Date Started</strong> </th>
+				<th width="10px" style="background-color:#3498DB !important;  border-color: #fff; color:#fff !important; "><strong>State</strong> </th>
+			</tr>
+	   	<tbody>
+	   		<tr t-foreach="docs" t-as="o">
+               	<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.name"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.hostel_address"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.contact_phone"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.maximum_capacity"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;" ><span t-esc="o.date_started"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.state"/></td>
+			</tr>
+			<br></br><br></br>
+		</tbody>
+				<table width="100%" style="border:none">
+        <tr>
+			<footer>
+        	<div style = "position: fixed;left: 0;bottom: 0;width: 100%;background-color: black;color: white;text-align: center;">
+				<p> Copyright  2022, All Rights Reserved.<br></br>
+					Developed by P180013 Abdullah</p>
+			</div>
+			</footer>
+      	</tr>
+   	</table>
+
+		</t>
+		</t>
+	</template>
+
+													<!-- Amenities !-->
+	<template id="hostel_amenities_base_menu">
+	    <t t-call="web.html_container">
+	    <div class="page">
+	    <!-- <t t-call="web.external_layout">  -->
+	    	<table width="100%" style="border: none;">
+            	<tr style="border:none">
+            		<td width="100%">
+						<t t-call="hms_hostel.report_template_3_document_id" />
+					</td>
+				</tr>
+			</table>
+	    </div>
+		</t>
+	    <!-- </t>  -->
+	</template>
+
+    <!-- Translatable template -->
+	<template id="report_template_3_document_id">
+	    <t t-call="web.html_container">
+	    <t foreach="docs" t-as ="doc">
+		<table width="100%" style="border: none;">
+            	<tr style="padding-top:0px;padding-bottom:10px;cellpadding:10px;">
+            		<td width="100%">
+							<img t-if="request.env.company.logo" t-att-src="image_data_uri(request.env.company.logo)"  style="max-height: 100px;" alt="Logo"/>
+							<div style="font:24px Helvetica,sans-serif !important;">
+								<h1 style="text-align:right" width = "200%">
+									<strong>
+										Fast National University
+									</strong>
+
+								</h1>
+							</div>
+
+
+							<div  style="font:24px Helvetica,sans-serif !important;" >
+
+							<h1 style="text-align:right" width = "100%">
+									<strong>
+										Hostel Amentites
+									</strong>
+
+								</h1>
+							</div>
+						</td>
+			      	</tr>
+				</table>
+
+			<tr style="border: 2px solid black; background-color: #A6B1E1">
+	 			<td width="10px" style="background-color:#3498DB !important;  border-color: #fff; color:#fff !important; "><strong>Name</strong> </td>
+		     	<td width="10px" style="background-color:#3498DB !important;  border-color: #fff; color:#fff !important; "><strong>Category Type</strong> </td>
+				<td width="10px" style="background-color:#3498DB !important;  border-color: #fff; color:#fff !important; "><strong>Price</strong> </td>
+		     	<td width="10px" style="background-color:#3498DB !important;  border-color: #fff; color:#fff !important; "><strong>Date of Purchase</strong> </td>
+	 			<td width="10px" style="background-color:#3498DB !important;  border-color: #fff; color:#fff !important; "><strong>Room Id</strong> </td>
+			</tr>
+
+	   	<tbody>
+	   		<tr t-foreach="docs" t-as="o" style = " background-color: #F9C784">
+               	<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.name"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.category_type"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.price"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.date_of_purchase"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.room_id.name"/></td>
+
+	       	</tr>
+						<br></br><br></br><br></br><br></br>
+		</tbody>
+			<table width="100%" style="border:none">
+        <tr>
+			<footer>
+        	<div style = "position: fixed;left: 0;bottom: 0;width: 100%;background-color: black;color: white;text-align: center;">
+				<p> Copyright  2022, All Rights Reserved.<br></br>
+					Developed by P180013 Abdullah</p>
+			</div>
+			</footer>
+      	</tr>
+   	</table>
+
+		</t>
+		</t>
+
+
+	</template>
+												<!-- Rooms !-->
+	<template id="hostel_room_base_menu">
+	    <t t-call="web.html_container">
+	    <div class="page">
+	    <!-- <t t-call="web.external_layout">  -->
+	    	<table width="100%" style="border: none;">
+            	<tr style="border:none">
+            		<td width="100%">
+						<t t-call="hms_hostel.report_template_4_document_id" />
+					</td>
+				</tr>
+			</table>
+	    </div>
+		</t>
+	    <!-- </t>  -->
+	</template>
+
+    <!-- Translatable template -->
+	<template id="report_template_4_document_id">
+	    <t t-call="web.html_container">
+	    <t foreach="docs" t-as ="doc">
+		<table width="100%" style="border: none;">
+            	<tr style="padding-top:0px;padding-bottom:10px;cellpadding:10px;">
+            		<td width="100%">
+							<img t-if="request.env.company.logo" t-att-src="image_data_uri(request.env.company.logo)"  style="max-height: 100px;" alt="Logo"/>
+							<div style="font:24px Helvetica,sans-serif !important;">
+								<h1 style="text-align:right" width = "200%">
+									<strong>
+										Fast National University
+									</strong>
+
+								</h1>
+							</div>
+
+
+
+							<div  style="font:24px Helvetica,sans-serif !important;" >
+
+							<h1 style="text-align:right" width = "100%">
+									<strong>
+										Hostel Rooms
+									</strong>
+
+								</h1>
+							</div>
+						</td>
+			      	</tr>
+				</table>
+
+
+			<tr style="border: 2px solid black; background-color: #BCDEEB">
+	 			<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Name</strong> </td>
+		     	<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Capacity Rooms</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Things in Room</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Number of Floors</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Rent</strong> </td>
+
+
+			</tr>
+
+	   	<tbody>
+	   		<tr t-foreach="docs" t-as="o">
+               	<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.name"/></td>
+				<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.no_of_rooms"/></td>
+				<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.things_in_room.name"/></td>
+				<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.no_of_floor"/></td>
+				<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.Rent"/></td>
+
+
+	       	</tr>
+			<br></br><br></br><br></br><br></br>
+		</tbody>
+<table width="100%" style="border:none">
+        <tr>
+			<footer>
+        	<div style = "position: fixed;left: 0;bottom: 0;width: 100%;background-color: black;color: white;text-align: center;">
+				<p> Copyright  2022, All Rights Reserved.<br></br>
+					Developed by P180013 Abdullah</p>
+			</div>
+			</footer>
+      	</tr>
+   	</table>
+
+		</t>
+		</t>
+
+	</template>
+
+						<!-- House Keeping!-->
+	<template id="housekeeping_base_menu">
+	    <t t-call="web.html_container">
+	    <div class="page">
+	    	<table width="100%" style="border: none;">
+            	<tr style="border:none">
+            		<td width="100%">
+						<t t-call="hms_hostel.report_template_5_document_id" />
+					</td>
+				</tr>
+			</table>
+	    </div>
+		</t>
+	</template>
+
+	<template id="report_template_5_document_id">
+	    <t t-call="web.html_container">
+	    <t foreach="docs" t-as ="doc">
+<table width="100%" style="border: none;">
+            	<tr style="padding-top:0px;padding-bottom:10px;cellpadding:10px;">
+            		<td width="100%">
+							<img t-if="request.env.company.logo" t-att-src="image_data_uri(request.env.company.logo)"  style="max-height: 100px;" alt="Logo"/>
+							<div style="font:24px Helvetica,sans-serif !important;">
+								<h1 style="text-align:right" width = "100%">
+									<strong>
+										Fast National University
+									</strong>
+
+								</h1>
+							</div>
+
+							<div  style="font:24px Helvetica,sans-serif !important;" >
+
+							<h1 style="text-align:right" width = "100%">
+									<strong>
+										Hostel house Keeping
+									</strong>
+
+								</h1>
+							</div>
+						</td>
+			      	</tr>
+				</table>
+
+
+			<tr style="border: 2px solid black; background-color: #BCDEEB">
+	 			<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Date</strong> </td>
+		     	<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Room Number</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Inspect Date</strong> </td>
+		     	<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Clean Type</strong> </td>
+	 			<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Inspector</strong> </td>
+		     	<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Quality</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Active</strong> </td>
+		     	<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>State</strong> </td>
+			</tr>
+
+	   	<tbody>
+	   		<tr t-foreach="docs" t-as="o">
+               	<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.date"/></td>
+				<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.room_no.name"/></td>
+				<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.Inspect_Date"/></td>
+				<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.clean_type"/></td>
+				<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.Inspector"/></td>
+				<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.Condition"/></td>
+				<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.active"/></td>
+				<td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.state"/></td>
+
+			</tr>
+			<br></br><br></br><br></br><br></br>
+			<table width="100%" style="border:none">
+        <tr>
+			<footer>
+        	<div style = "position: fixed;left: 0;bottom: 0;width: 100%;background-color: black;color: white;text-align: center;">
+				<p> Copyright  2022, All Rights Reserved.<br></br>
+					Developed by P180013 Abdullah</p>
+			</div>
+			</footer>
+      	</tr>
+   	</table>
+
+		</tbody>
+		</t>
+		</t>
+
+	</template>
+
+
+													<!-- hostel_admission !-->
+	<template id="hostel_admission_base_menu">
+	    <t t-call="web.html_container">
+	    <div class="page">
+	    <!-- <t t-call="web.external_layout">  -->
+	    	<table width="100%" style="border: none;">
+            	<tr style="border:none">
+            		<td width="100%">
+						<t t-call="hms_hostel.report_template_6_document_id" />
+					</td>
+				</tr>
+			</table>
+	    </div>
+		</t>
+	    <!-- </t>  -->
+	</template>
+
+    <!-- Translatable template -->
+	<template id="report_template_6_document_id">
+	    <t t-call="web.html_container">
+	    <t foreach="docs" t-as ="doc">
+		<table width="100%" style="border: none;">
+            	<tr style="padding-top:0px;padding-bottom:10px;cellpadding:10px;">
+            		<td width="100%">
+							<img t-if="request.env.company.logo" t-att-src="image_data_uri(request.env.company.logo)"  style="max-height: 100px;" alt="Logo"/>
+							<div style="font:24px Helvetica,sans-serif !important;">
+								<h1 style="text-align:right" width = "50%">
+									<strong>
+										Fast National University
+									</strong>
+
+								</h1>
+							</div>
+
+							<h1 style="text-align:right" width = "100%">
+									<strong>
+										Hostel Admission
+									</strong>
+
+								</h1>
+						</td>
+			      	</tr>
+				</table>
+
+
+			<tr style="border: 2px solid black; background-color: #BCDEEB">
+	 			<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Student Name</strong> </td>
+	 			<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Admission No</strong> </td>
+		     	<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Billing Date</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Price List Policy</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Hostel Name</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Active</strong> </td>
+
+		    	<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Room Assaigned </strong> </td>
+		     	<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Deposit Policy</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Payment Frequency</strong> </td>
+		    	<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="14%"><strong>Leaving Date</strong> </td>
+
+			</tr>
+
+
+	   	<tbody>
+	   		<tr t-foreach="docs" t-as="o">
+               	<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.student_name_id.name"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.admission_no"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.Billing_date"/></td>
+               	<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.price_list_policy"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.hostel_name.name"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.active"/></td>
+
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.room_id.name"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.Deposit_policy.name"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.payment_frequency"/></td>
+                <td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.leaving_date"/></td>
+
+	       	</tr>
+			<br></br><br></br><br></br><br></br>
+
+		</tbody>
+			<table width="100%" style="border:none">
+        <tr>
+			<footer>
+        	<div style = "position: fixed;left: 0;bottom: 0;width: 100%;background-color: black;color: white;text-align: center;">
+				<p> Copyright  2022, All Rights Reserved.<br></br>
+					Developed by P180013 Abdullah</p>
+			</div>
+			</footer>
+      	</tr>
+   	</table>
+
+		</t>
+		</t>
+
+	</template>
+
+
+													<!-- hostel_deposit policy !-->
+	<template id="deposit_policy_base_menu">
+	    <t t-call="web.html_container">
+	    <div class="page" style = "border-radius : 24px; border-style:solid;">
+	    <!-- <t t-call="web.external_layout">  -->
+	    	<table width="100%" style="border: none;">
+				<tr  style = "border-radius : 24px; border-style:solid;">
+            		<td width="100%">
+						<t t-call="hms_hostel.report_template_7_document_id" />
+					</td>
+				</tr>
+			</table>
+	    </div>
+		</t>
+	    <!-- </t>  -->
+	</template>
+
+    <!-- Translatable template -->
+	<template id="report_template_7_document_id">
+	    <t t-call="web.html_container">
+	    <t foreach="docs" t-as ="doc">
+		<table width="100%" style="border: none;">
+            	<tr style="padding-top:0px;padding-bottom:10px;cellpadding:10px;">
+            		<td width="100%">
+							<img t-if="request.env.company.logo" t-att-src="image_data_uri(request.env.company.logo)"  style="max-height: 100px;" alt="Logo"/>
+							<div style="font:24px Helvetica,sans-serif !important;">
+								<h1 style="text-align:right" width = "200%">
+									<strong>
+										Fast National University
+									</strong>
+
+								</h1>
+							</div>
+
+
+							<div  style="font:24px Helvetica,sans-serif !important;" >
+
+							<h1 style="text-align:right" width = "100%">
+									<strong>
+										Hostel Deposit Policy
+									</strong>
+
+								</h1>
+							</div>
+						</td>
+			      	</tr>
+				</table>
+
+			<tr style="border: 2px solid black; background-color: #BCDEEB">
+	 			<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Hostel Name  </strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Policy Name  </strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>From Date</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>End Date </strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Minimum Deposit Amount</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Taxes</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Fixed Charges </strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Bookable Charges</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Inactive </strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black" width="27%"><strong>Short Description  </strong> </td>
+
+			</tr>
+	   	<tbody>
+	   		<tr t-foreach="docs" t-as="o">
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.hostel_id.name"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.name"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.From_date"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.End_date"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.Minimum_deposit_Amount"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.taxes"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.fixed_charges"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.bookable_packages"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.inactive"/></td>
+				<td style="border: 1px !important; border-style: solid !important; border-color: #F9C784 !important; background-color:#BEBBBB !important;"><span t-esc="o.short_description"/></td>
+
+			</tr>
+			<br></br><br></br><br></br><br></br>
+		</tbody>
+		</t>
+		</t>
+		<table width="100%" style="border:none">
+        <tr>
+			<footer>
+        	<div style = "position: fixed;left: 0;bottom: 0;width: 100%;background-color: black;color: white;text-align: center;">
+				<p> Copyright  2022, All Rights Reserved.<br></br>
+					Developed by P180013 Abdullah</p>
+			</div>
+			</footer>
+      	</tr>
+   	</table>
+
+	</template>
+	<!-- STUDENT TEMPLATE!-->
+		<template id="student_base_menu">
+	    <t t-call="web.html_container">
+	    <div class="page"  style = "border-style:solid; border: solid #32a1ce;">
+	    <!-- <t t-call="web.external_layout">  -->
+	    	<table width="100%" style="border: none;">
+            	<tr style="border:none">
+            		<td width="100%">
+						<t t-call="hms_hostel.report_template_8_document_id" />
+					</td>
+				</tr>
+			</table>
+	    </div>
+		</t>
+	    <!-- </t>  -->
+	</template>
+
+    <!-- Translatable template -->
+	<template id="report_template_8_document_id">
+	    <t t-call="web.html_container">
+	    <t foreach="docs" t-as ="doc">
+		<table width="100%" style="border: none;">
+            	<tr style="padding-top:0px;padding-bottom:10px;cellpadding:10px;">
+            		<td width="100%">
+							<img t-if="request.env.company.logo" t-att-src="image_data_uri(request.env.company.logo)"  style="max-height: 100px;" alt="Logo"/>
+							<div style="font:24px Helvetica,sans-serif !important;">
+								<h1 style="text-align:right" width = "200%">
+									<strong>
+										Fast National University
+									</strong>
+
+								</h1>
+							</div>
+
+
+							<div  style="font:24px Helvetica,sans-serif !important;" >
+
+							<h1 style="text-align:right" width = "100%">
+									<strong>
+										Hostel Students
+									</strong>
+
+								</h1>
+							</div>
+						</td>
+			      	</tr>
+				</table>
+
+			<tr style="border: 2px solid black; background-color: #BCDEEB">
+	 			<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black;" width="27%"><strong>Name</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black;" width="27%"><strong>Father Name</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black;" width="27%"><strong>Mobile Number</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black;" width="27%"><strong>Registration Number</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black;" width="27%"><strong>Gender</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black;" width="27%"><strong>Age</strong> </td>
+				<td style="padding-top:5px;padding-bottom:10px;border: 2px solid black;" width="27%"><strong>Date of Birth</strong> </td>
+
+			</tr>
+	   	<tbody>
+	   		<tr t-foreach="docs" t-as="o">
+                <td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.name"/></td>
+                <td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.father_name"/></td>
+                <td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.contact_mobile"/></td>
+                <td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.registration_no"/></td>
+                <td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.gender"/></td>
+                <td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.age"/></td>
+                <td style="padding=5px;border: 1px solid black;font-size: 16px;padding: 5px;" width="14%"><span t-esc="o.date_of_birth"/></td>
+			</tr>
+		</tbody>
+			<br></br><br></br><br></br>
+		</t>
+		</t>
+		<table width="100%" style="border:none">
+        <tr>
+			<footer>
+        	<div style = "position: fixed;left: 0;bottom: 0;width: 100%;background-color: black;color: white;text-align: center;">
+				<p> Copyright  2022, All Rights Reserved.<br></br>
+					Developed by P180013 Abdullah</p>
+			</div>
+			</footer>
+      	</tr>
+   	</table>
+
+	</template>
+
+</odoo>
