@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hms_hostel_admin,hms.hostel.admin,model_hms_hostel,hms_hostel.group_hms_hostel_administrator_id,1,1,1,1
+access_hms_hostel_all,hms.hostel.all,model_hms_hostel,,1,1,1,1
+,,,,,,,
+access_hms_hostel_floor_admin,hms.hostel_floor.admin,model_hms_hostel_floor,hms_hostel.group_hms_hostel_administrator_id,1,1,1,1
+access_hms_hostel_floor_all,hms.hostel_floor.all,model_cms_employee,,1,1,1,1
+,,,,,,,
+access_hms_amenities_admin,hms.amenities.admin,model_hms_amenities,hms_hostel.group_hms_hostel_administrator_id,1,1,1,1
+access_hms_amenities_all,hms.amenities.all,model_hms_amenities,,1,1,1,1
+
+access_hms_amenities_admin,hms.amenities.admin,model_hms_amenities,hms_hostel.group_hms_hostel_administrator_id,1,1,1,1
+access_hms_amenities_all,hms.amenities.all,model_hms_amenities,,1,1,1,1

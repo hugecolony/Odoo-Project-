@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<odoo>
+    <record id="paperformat_fee_landscape" model="report.paperformat">
+			<field name="name">Hostel Report Format Landscape</field>
+			<field name="default" eval="True"/>
+			<field name="format">A4</field>
+			<field name="page_height">0</field>
+			<field name="page_width">0</field>
+			<field name="orientation">Landscape</field>
+			<field name="margin_top">0</field>
+			<field name="margin_bottom">0</field>
+			<field name="margin_left">0</field>
+			<field name="margin_right">0</field>
+			<field name="header_line" eval="False"/>
+			<field name="header_spacing">3</field>
+			<field name="dpi">90</field>
+		</record>
+
+		<record id="paperformat_fee_portrait" model="report.paperformat">
+			<field name="name">hostel Report Format Landscape 2</field>
+			<field name="default" eval="True"/>
+			<field name="format">A4</field>
+			<field name="page_height">0</field>
+			<field name="page_width">0</field>
+			<field name="orientation">Portrait</field>
+			<field name="margin_top">05</field>
+			<field name="margin_bottom">05</field>
+			<field name="margin_left">0</field>
+			<field name="margin_right">0</field>
+			<field name="header_line" eval="False"/>
+			<field name="header_spacing">3</field>
+			<field name="dpi">90</field>
+		</record>
+
+
+
+		<report
+                id = "report_hostel_card"
+                string = "Hostel"
+                model = "hms.hostel"
+                report_type = "qweb-pdf"
+				name = "hms_hostel.hostel_base_menu"
+				file = "hms_hostel.hostel_base_menu"
+        />
+
+		<report
+                id = "report_hostel_amenities_card"
+                string = "Hostel amenities"
+                model = "hms.amenities"
+                report_type = "qweb-pdf"
+				name = "hms_hostel.hostel_amenities_base_menu"
+				file = "hms_hostel.hostel_amenities_base_menu"
+        />
+
+		<report
+                id = "report_hostel_rooms_card"
+                string = "Hostel Rooms"
+                model = "hms.hostel_rooms"
+                report_type = "qweb-pdf"
+				name = "hms_hostel.hostel_room_base_menu"
+				file = "hms_hostel.hostel_room_base_menu"
+        />
+
+			<report
+                id = "report_hostel_housekeeping_card"
+                string = "Hostel Housekeeping"
+                model = "hms.housekeeping"
+                report_type = "qweb-pdf"
+				name = "hms_hostel.housekeeping_base_menu"
+				file = "hms_hostel.housekeeping_base_menu"
+        />
+			<report
+                id = "report_hostel_admission_card"
+                string = "Hostel Admission"
+                model = "hms.hostel_admission"
+                report_type = "qweb-pdf"
+				name = "hms_hostel.hostel_admission_base_menu"
+				file = "hms_hostel.hostel_admission_base_menu"
+        />
+
+		<report
+                id = "report_hostel_deposit_policy_card"
+                string = "Hostel deposit_policy"
+                model = "hms.deposit_policy"
+                report_type = "qweb-pdf"
+				name = "hms_hostel.deposit_policy_base_menu"
+				file = "hms_hostel.deposit_policy_base_menu"
+        />
+
+
+		<report
+                id = "report_hostel_student_card"
+                string = "Hostel Student"
+                model = "hms.student"
+                report_type = "qweb-pdf"
+				name = "hms_hostel.student_base_menu"
+				file = "hms_hostel.student_menu"
+        />
+</odoo>

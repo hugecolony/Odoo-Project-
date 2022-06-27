@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id= 'hostel_record_action' model = 'ir.actions.act_window'>
+        <field name="name">Hostel Record</field>
+        <field name="res_model" >hms.hostel</field>
+        <field name="view_mode" >tree,form</field>
+    </record>
+    <record id="hostel_student_action" model="ir.actions.act_window">
+        <field name="name">HMS Student</field>
+        <field name="res_model">hms.student</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_HMS_department_id" model="ir.actions.act_window">
+        <field name="name">hms department</field>
+        <field name="res_model">hms.department</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id='hostel_amenities_action' model = 'ir.actions.act_window'>
+        <field name="name">Amenities</field>
+        <field name="res_model" >hms.amenities</field>
+        <field name="view_mode" >tree,form</field>
+    </record>
+        <record id='hostel_room_action' model = 'ir.actions.act_window'>
+        <field name="name">Rooms</field>
+        <field name="res_model" >hms.hostel_rooms</field>
+        <field name="view_mode" >tree,form</field>
+    </record>
+
+    <record id ="hostel_deposit_policy_action" model="ir.actions.act_window">
+            <field name="name">Deposit Policy</field>
+            <field name="res_model">hms.deposit_policy</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id ="hostel_housekeeping_action" model="ir.actions.act_window">
+            <field name="name">House Keeping</field>
+            <field name="res_model">hms.housekeeping</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id ="hostel_admission_action" model="ir.actions.act_window">
+            <field name="name">Hostel Admission </field>
+            <field name="res_model">hms.hostel_admission</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Hostel Management" id= "hostel_base_menu"/>
+    <menuitem name = "Details" id = "details_menu" parent="hostel_base_menu" />
+    <menuitem name = "House Keeping" id="house_keeping_menu" parent="hostel_base_menu" />
+    <menuitem name = "Admission" id="admission_menu" parent="hostel_base_menu"/>
+    <menuitem name = "Deposit Payment Policy"  id = "deposit_payment_policy" parent="hostel_base_menu"/>
+    <menuitem id="hostel_menu" name="HMS Student" parent="hostel_base_menu"/>
+
+
+    <menuitem name = "Hostels" id="Hostel_menu" parent="details_menu" action = "hostel_record_action"/>
+    <menuitem name = "Amenities" id="Amenities_menu" parent="details_menu" action="hostel_amenities_action"/>
+    <menuitem name = "Hostel Rooms" id="Rooms_menu" parent="details_menu" action="hostel_room_action"/>
+	<menuitem name="Student"  id="student_menu"  parent="hostel_menu" action="hostel_student_action"/>
+
+
+
+    <menuitem name = "New House Keeping" id="new_house_keeping_menu" parent="house_keeping_menu" action="hostel_housekeeping_action"/>
+    <menuitem name = "New admission" id="new_admission_menu" parent="admission_menu" action="hostel_admission_action"/>
+
+
+
+
+
+    <record id="hostel_view_form" model="ir.ui.view">
+        <field name="name">Hostel View Form</field>
+        <field name="model">hms.hostel</field>
+        <field name="arch" type ="xml">
+                <form>
+                    <group>
+                        <group>
+                           <!--<field name="author_ids" widget="many2many_tags"/>!-->
+                            <field name="name"></field>
+                            <field name="hostel_address"></field>
+                            <field name="contact_phone"></field>
+
+                        </group>
+
+                        <group>
+                            <field name="state" />
+                            <field name="maximum_capacity"/>
+                            <field name="date_started"/>
+                            <!--<field name="cover" widget="image" class="oe_avatar"/>!-->
+                            <field name="image"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </form>
+        </field>
+</record>
+    <record id="hostel_view_tree" model="ir.ui.view">
+       <field name="name">Hostel View List</field>
+        <field name="model" >hms.hostel</field>
+        <field name="arch" type ="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="active"/>
+                    <field name="hostel_address"/>
+                    <field name="contact_phone"></field>
+                    <field name="contact_mobile"></field>
+                </tree>
+        </field>
+    </record>
+
+        <record id="hostel_view_search" model = "ir.ui.view">
+        <field name="name">Hostel View Search</field>
+        <field name="model">hms.hostel</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name = "name"/>
+
+
+            </search>
+        </field>
+    </record>
+
+
+
+
+    <record id="view_hostel_room_form" model="ir.ui.view">
+        <field name="name">view.hostel.rooms.form</field>
+        <field name="model">hms.hostel_rooms</field>
+        <field name="arch" type ="xml">
+         <form string="Hostel Rooms">
+                    <sheet style="width: 10%%,height:10%%">
+                        <separator string="Hostel Rooms"/>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="Room_number"/>
+                            <field name="no_of_rooms"/>
+                            <field name = "things_in_room"/>
+                            <field name="no_of_floor"/>
+                            <field name="Rent"/>
+
+                        </group>
+                    </sheet>
+                </form>
+        </field>
+    </record>
+
+    <record id="hostel_room_view_tree" model="ir.ui.view">
+       <field name="name">Hostel Room List</field>
+        <field name="model" >hms.hostel_rooms</field>
+        <field name="arch" type ="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="Room_number"/>
+                    <field name="no_of_rooms"/>
+                    <field name="no_of_floor"/>
+                    <field name="Rent"/>
+                    <field name="things_in_room"></field>
+                    </tree>
+        </field>
+    </record>
+
+    <record id="view_amenities_form" model="ir.ui.view">
+        <field name="name">view.amenities.form</field>
+        <field name="model">hms.amenities</field>
+        <field name="arch" type ="xml">
+         <form string="Amenities">
+                    <sheet style="width: 10%%,height:10%%">
+                        <separator string="Amenities"/>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="category_type" />
+                        </group>
+                        <group>
+                            <form string = "Account Properties"></form>
+                            <field name ="price"/>
+                            <field name = "date_of_purchase"></field>
+                            <field name="room_id"/>
+                        </group>
+                    </sheet>
+                </form>
+        </field>
+    </record>
+
+    <record id="hostel_amenity_view_tree" model="ir.ui.view">
+       <field name="name">Hostel Amenitiy List</field>
+        <field name="model" >hms.amenities</field>
+        <field name="arch" type ="xml">
+                <tree>
+                            <field name="name"/>
+                            <field name = "price"/>
+                            <field name = "date_of_purchase"/>
+
+                </tree>
+        </field>
+    </record>
+
+    <record id="view_deposit_policy_form" model="ir.ui.view">
+        <field name="name">view.deposit.policy.form</field>
+        <field name="model">hms.deposit_policy</field>
+        <field name="arch" type ="xml">
+         <form string="Deposit Policy">
+                    <sheet style="width: 10%%,height:10%%">
+                        <separator string="Hostel Deposit Policy"/>
+                        <field name="hostel_id"></field>
+                        <group col="4">
+                            <field name = "From_date"/>
+                            <field name = "name"/>
+                            <field name = "Minimum_deposit_Amount"/>
+                            <field name="End_date"/>
+                        </group>
+                        <separator string="Calculation Type"/>
+                         <group col="1">
+                             <field name="Calculation_category_type"></field>
+                         </group>
+                         <separator string="Include the following when calculating deposit amount"/>
+                         <group col="3">
+                             <field name="taxes"></field>
+                             <field name="fixed_charges"></field>
+                             <field name="bookable_packages"></field>
+                             <field name="inactive"/>
+                              </group>
+
+                        <separator string="Description"/>
+                            <group col="1">
+                            <field name="short_description"/>
+                            </group>
+                    </sheet>
+                </form>
+        </field>
+    </record>
+
+    <record id="hostel_deposit_policy_view_tree" model="ir.ui.view">
+       <field name="name">Hostel Deposit Policy List</field>
+        <field name="model" >hms.deposit_policy</field>
+        <field name="arch" type ="xml">
+                <tree>
+                            <field name="hostel_id"></field>
+                            <field name = "From_date"/>
+                            <field name = "name"/>
+                            <field name = "Minimum_deposit_Amount"/>
+                            <field name="End_date"/>
+
+                </tree>
+        </field>
+    </record>
+    <record id="house_keeping_view_tree" model="ir.ui.view">
+       <field name="name">House Keeping View List</field>
+        <field name="model" >hms.housekeeping</field>
+        <field name="arch" type ="xml">
+                <tree>
+                    <field name="room_no"/>
+                    <field name ="clean_type"/>
+                    <field name="date"/>
+                    <field name="Inspector"/>
+                    <field name="Condition"/>
+                    <field name="Inspect_Date"/>
+                </tree>
+        </field>
+</record>
+
+     <record id="house_keeping_form" model="ir.ui.view">
+        <field name="name">view.house.keeping.form</field>
+        <field name="model">hms.housekeeping</field>
+        <field name="arch" type ="xml">
+         <form string="House Keeping">
+                    <sheet style="width: 10%%,height:10%%">
+                        <separator string="Housekeeping"/>
+                        <group col="5">
+                            <field name="room_no"/>
+                            <field name ="clean_type"/>
+                            <field name="date"/>
+                            <field name = "room_no"/>
+                            <field name = "Inspect_Date"/>
+
+                        </group>
+
+
+                    </sheet>
+                </form>
+        </field>
+    </record>
+    <record id="view_housekeeping_id" model="ir.ui.view">
+        <field name="name">hms.housekeeping.form</field>
+        <field name="model">hms.housekeeping</field>
+        <field name="arch" type="xml">
+            <form string="Hostel keeping">
+                <header>
+                    <button class="oe_stat_button" name="set_to_verified" string="Verify" type="object" icon="fa-check" states="draft" />
+                    <button class="oe_stat_button" name="set_to_draft" string="Draft" type="object" icon="fa-check" states="verified"/>
+                    <button class="oe_stat_button" name="set_to_cancelled" string="Cancel" type="object" icon="fa-check" states="draft" />
+                    <field name="state" widget="statusbar" statusbar_visible="draft,verified" attrs="{'invisible':[('active','=',False)]}"/>
+
+                </header>
+                <sheet>
+                     <div>
+						<group  string="Hostel Information">
+                            <field name = "room_no" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="date" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name = "Inspect_Date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name = "clean_type" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name = "Inspector" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="active" attrs="{'readonly':[('state','!=','draft')]}"/>
+
+
+						</group>
+
+
+					</div>
+				</sheet>
+			</form>
+		</field>
+    </record>
+                                <!-- hOSTEL Addmission1-->
+
+    <record id="hostel_admission_view_tree" model="ir.ui.view">
+       <field name="name">Hostel Admission List</field>
+        <field name="model" >hms.hostel_admission</field>
+        <field name="arch" type ="xml">
+            <tree>
+
+                            <field name ="hostel_name"/>
+                            <field name="student_name_id"/>
+                            <field name = "admission_no"/>
+                            <field name="payment_frequency"/>
+                            <field name="leaving_date"/>
+                            <field name="state"/>
+                            <field name="name_seq"/>
+                </tree>        </field>
+</record>
+    <record id="view_hostel_admission_id" model="ir.ui.view">
+        <field name="name">hms.hostel.admission.form</field>
+        <field name="model">hms.hostel_admission</field>
+        <field name="arch" type="xml">
+            <form string="Hostel Admission">
+                <header>
+                    <button class="oe_stat_button" name="set_to_verified" string="Verify" type="object" icon="fa-check" states="draft" />
+                    <button class="oe_stat_button" name="set_to_approved" string="Approve" type="object" icon="fa-check" states="verified"/>
+                    <button class="oe_stat_button" name="set_to_draft" string="Draft" type="object" icon="fa-check" states="verified,approved"/>
+                    <button class="oe_stat_button" name="set_to_cancelled" string="Cancel" type="object" icon="fa-check" states="draft"/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,verified,approved,cancelled" attrs="{'invisible':[('active','=',False)]}"/>
+                </header>
+                <sheet>
+                     <div>
+						<group  string="Hostel Admission Information">
+
+                            <field name = "student_name_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name = "admission_no" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="Billing_date" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name = "hostel_name" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name = "price_list_policy" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="active" attrs="{'readonly':[('state','!=','draft')]}"/>
+
+                            <separator string="Admission Details"/>
+                            <field name="room_id" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="Deposit_policy" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="payment_frequency" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="leaving_date" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="name_seq" attrs="{'readonly':[('state','!=','draft')]}" />
+
+						</group>
+
+
+					</div>
+				</sheet>
+			</form>
+		</field>
+    </record>
+
+    <record id="view_hms_student_form_id" model="ir.ui.view">
+        <field name="name">hms.student.form</field>
+        <field name="model">hms.student</field>
+        <field name="arch" type="xml">
+            <form string="Student Information">
+                <header>
+                    <button class="oe_stat_button" name="set_to_verified" string="Verify" type="object" icon="fa-check" states="draft" />
+                    <button class="oe_stat_button" name="set_to_approved" string="Approve" type="object" icon="fa-check" states="verified"/>
+                    <button class="oe_stat_button" name="set_to_draft" string="Draft" type="object" icon="fa-check" states="verified,approved"/>
+                    <button class="oe_stat_button" name="set_to_cancelled" string="Cancel" type="object" icon="fa-check" states="draft"/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="draft,verified,approved,cancelled" attrs="{'invisible':[('active','=',False)]}"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Student Name" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        </h1>
+                     </div>
+
+                     <div>
+						<group colspan="4" col="4" string="Student Information">
+							<field name="father_name" attrs="{'readonly':[('state','!=','draft')]}"/>
+							<field name="admission_no"/>
+							<field name="contact_mobile" attrs="{'readonly':[('state','!=','draft')]}"/>
+							<field name="registration_no" attrs="{'readonly':[('state','!=','draft')]}"/>
+							<field name="contact_phone" attrs="{'readonly':[('state','!=','draft')]}"/>
+							<field name="gender" attrs="{'readonly':[('state','!=','draft')]}"/>
+							<field name="admission_date" attrs="{'readonly':[('state','!=','draft')]}"/>
+							<field name="date_of_birth" attrs="{'readonly':[('state','!=','draft')]}"/>
+							<field name="user_id"/>
+							<field name="department_id" readonly="1"/>
+							<field name="age"/>
+							<field name="active" attrs="{'readonly':[('state','!=','draft')]}"/>
+						</group>
+
+						<notebook>
+							<page string="Remarks">
+								<field name="remark"/>
+							</page>
+                        </notebook>
+
+					</div>
+				</sheet>
+			</form>
+		</field>
+    </record>
+
+    <!-- Tree View of Student -->
+    <record id="view_hms_student_tree_id" model="ir.ui.view">
+        <field name="name">student.student.tree</field>
+        <field name="model">hms.student</field>
+        <field name="arch" type="xml">
+            <tree string="Student Information" create="true" delete="false">
+				<field name="name"/>
+                <field name="father_name"/>
+                <field name="admission_no"/>
+				<field name="registration_no"/>
+				<field name="gender"/>
+				<field name="date_of_birth"/>
+				<field name="admission_date"/>
+				<field name="age"/>
+				<field name="contact_phone"/>
+				<field name="contact_mobile"/>
+				<field name="user_id" invisible="1"/>
+				<field name="state" invisible="1"/>
+				<field name="active" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Calendar View Of Student -->
+    <record id="view_hms_student_calendar_id" model="ir.ui.view">
+        <field name="name">hms.student.calendar</field>
+        <field name="model">hms.student</field>
+        <field name="arch" type="xml">
+            <calendar color="name" date_start="admission_date" date_stop="date_of_birth" string="Admission">
+                <field name="name"/>
+                <field name="admission_date"/>
+                <field name="gender"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- Search View of Student -->
+    <record id="view_hms_student_search_id" model="ir.ui.view">
+        <field name="name">hms.student.search</field>
+        <field name="model">hms.student</field>
+        <field name="arch" type="xml">
+            <search string="Student Information">
+                <group col="10" colspan="4">
+                    <field name="name"/>
+                    <field name="father_name"/>
+                    <field name="registration_no"/>
+					<field name="gender"/>
+					<field name="date_of_birth"/>
+					<field name="admission_date"/>
+					<field name="contact_phone"/>
+					<field name="contact_mobile"/>
+					<field name="state"/>
+
+                </group>
+                <newline />
+                <group expand="0" string="Group By" colspan="12" col="10">
+                    <filter name="admission_date" string="Admission Date" help="By Admission Date" context="{'group_by':'admission_date'}" />
+                    <filter name="gender" string="Gender" help="By Gender" context="{'group_by':'gender'}" />
+                    <filter name="state" string="State" help="By State" context="{'group_by':'state'}"/>
+                </group>
+
+                <separator/>
+                <filter name="draft" string="Draft" domain="[('state','=', 'draft')]" help="Admission In Draft State"/>
+                <filter name="done" string="Done" domain="[('state','=', 'done')]" help="Admission In Done State"/>
+                <filter name="cancelled" string="Cancelled" domain="[('state','=', 'cancelled')]" help="Admission In Cancelled State"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Form View 1 Of Department's Views -->
+    <record id="view_HMS_department_form_id" model="ir.ui.view">
+        <field name="name">hms.department.form</field>
+        <field name="model">hms.department</field>
+        <field name="arch" type="xml">
+            <form string="Department Information">
+                <sheet>
+                     <div>
+						<group>
+							<field name="name"/>
+						</group>
+
+						<notebook>
+							<page string="Students">
+								<field name="student_ids"/>
+							</page>
+						</notebook>
+					</div>
+				</sheet>
+			</form>
+		</field>
+    </record>
+
+    <!-- Tree View of Department -->
+    <record id="view_HMS_department_tree_id" model="ir.ui.view">
+        <field name="name">student.department.tree</field>
+        <field name="model">hms.department</field>
+        <field name="arch" type="xml">
+            <tree string="Department Information" create="true" delete="false">
+				<field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_HMS_department_id" model="ir.actions.act_window">
+        <field name="name">HMS Department</field>
+        <field name="res_model">hms.department</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+</odoo>
